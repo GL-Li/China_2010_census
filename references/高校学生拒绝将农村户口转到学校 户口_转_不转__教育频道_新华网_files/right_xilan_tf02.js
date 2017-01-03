@@ -1,0 +1,2 @@
+// JavaScript Document
+document.writeln("<iframe width=\"280\" scrolling=\"No\" height=\"130\" frameborder=\"0\" vspale=\"0\" noresize=\"noResize\" framespacing=\"0\" border=\"0\"  marginheight=\"0\" marginwidth=\"0\" name=\"search\" src=\"http:\/\/imgs.xinhuanet.com\/ad\/xlhzh02.htm\"><\/iframe>")

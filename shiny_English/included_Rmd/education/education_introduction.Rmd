@@ -1,0 +1,22 @@
+---
+title: "education introduction"
+author: "GL Li"
+date: "December 17, 2015"
+output: html_document
+---
+
+This page is based on the education data published in China 2010 census. The focus is on age, gender, and the gap between city and village. 
+
+**Education level**. The census recorded 7 education levels, from no school at all to graduate school. The numbers of each level include school students. In _specialized colleges_ students get 2 to 4 years practical training in a specific field, whereas in _universities_ students are supposed to get broader training in related fields. The education level for a person is the highest level of education he/she had.
+
+**People with high education are living in cities**. There are two reasons. (1) Cities offers better opportunities to get high education(college and up) for their own citizens. (2) People in villages and towns move to cities _after_ completing high education. Note that some college students whose Hukou is still in villages are counted towards villages, even though they spend most of their time in cities.
+
+**Men have better education overall**. However, this is mainly due to historical reasons as there are much more men than women with high education above age 30. Under age 30, the ratio of men and women having high education are nearly the same.
+
+**Education at each age**. The figures above show the percent of population for each education level at various ages as of 2010.
+- **_No school_** -- A significant percentage of the population over 50 years old never went to school.
+- **_Elementary school_** -- Nearly all children at the right age went to elementary school. A large portion of the population of 40 years old and up has no education beyond elementary school, especially in villages.
+- **_Middle school_** -- About 20% children dropped out during middle school even though the mandatory nine-year education law has been in place since 1986. 
+- **_High school_** -- Only about 30% of the children in villages went to high school while about 65% in cities and towns did. There is a noticeable peak at age 50, a consequence of the re-establishment of the college admission exam in 1978. This exam stimulated the enrollment of high school. However, the passion faded soon as colleges were only able to take a small fraction of students due to the limited capacity.
+- **_Specialized college_** and **_University_** -- From 1990 to 2010 (ages 40 to 20) the enrollment climbed steadily. Note that some students from villages moved their Hukou to city so the percentage in villages appears to be smaller.
+- **_Graduate school_** -- Over 91% of the 4.14 millions who had graduate school education lived in cities, 6% in towns, and less than 3% in villages. Most of the 3% are actually graduate students who will stay in cities after graduation.

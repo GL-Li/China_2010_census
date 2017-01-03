@@ -1,0 +1,7 @@
+---
+title: "house"
+author: "GL Li"
+date: "December 6, 2015"
+output: html_document
+---
+The census collected building area per person and number of rooms per household. The former represents economic development while the latter reflects the number of people per household. In addition, the census also collected the building area per person based on the education level of the head of household. The most popular number of rooms of a household in each province is plotted in this figure.

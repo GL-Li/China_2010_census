@@ -1,0 +1,28 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1468238212575.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "624DEE4B",
+    "lastKnownWriteTime" : 8319665212435423024,
+    "last_content_update" : 1468238212575,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "yii6voa0wd",
+        "caption" : "eduLong",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=eduLong&cache_key=yii6voa0wd",
+        "displayedObservations" : "3318",
+        "environment" : "",
+        "object" : "eduLong",
+        "totalObservations" : "3318",
+        "variables" : "10"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}

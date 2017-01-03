@@ -1,0 +1,17 @@
+---
+title: "house_popular_number_rooms"
+author: "GL Li"
+date: "December 8, 2015"
+output: html_document
+---
+This page visualizes the house data published in the 2010 China census. 
+
+**What is household?** The house data in the census is based on household, which does not equal to family. For example, if a man works and lives in a city while his family is in a village, this family is recorded as two household living in two houses. The types of houses include single family house, town house, and apartment.
+
+**City, town, and villiage**.  The drop down menu above allows users to select data for city, town, and village separately, plus the combination of all of them, noted with "all".
+
+**Number of rooms per household**. The most popular number of rooms are plotted in a China map. The percentage of the houses with various number of rooms is also plotted for each province. Houses with fewer rooms are popular in places where there are many migrant workers and the family sizes are small. Houses in villages have more rooms as the families usually have more members.
+
+**Building area per person**. Building area per person in each province is plotted in a China map. These numbers are close in cities in each province but differ significantly in villages. A possible reason is that building area per person is mainly determined by the availability of land in cities, while it is mainly restricted by how much money the families have in villages.
+
+**Better education means larger house**. The census also collected the average building area per person for household of which the heads have different levels of education. Overall, better education can be converted into larger building area.

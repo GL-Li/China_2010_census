@@ -1,0 +1,7 @@
+---
+title: "Population"
+output: html_document
+---
+
+China is the most populous country in the world. As of November 01, 2010 when the census was taken, the census recorded a total population of 1,370,536,875. This page analyzes events affecting population by plotting population against age or year of birth for both male and female living in cities, towns, and villages.  
+

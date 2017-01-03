@@ -1,0 +1,27 @@
+---
+title: "population timeline"
+author: "GL Li"
+date: "December 20, 2015"
+output: html_document
+---
+**Click on letters in each figure for more information.**  
+<br />
+  
+
+#### **Timeline of historical events**
+**1911**: end of Qing dynasty and establishment of Republic of China.  
+
+**1937 - 1945**: Japan invation.  
+
+**1949**: establishment of People's Republic of China.  
+
+**1959 - 1961**: great famine.  
+
+**1966 - 1976**: Cultural Revolution.  
+
+**1979**: reform and opening up.  
+
+**1980**: one child policy.  
+
+**1990** enhancement of one child policy
+

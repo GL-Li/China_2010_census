@@ -1,0 +1,153 @@
+---
+title: "China 2010 Cencus Visulization - Education"
+output: html_document
+---
+```{r, echo=FALSE}
+library(knitr)
+opts_chunk$set(message=FALSE, warning=FALSE)
+```
+
+
+## data source
+[The 2010 population cencus of China](http://www.stats.gov.cn/tjsj/pcsj/rkpc/6rp/indexce.htm)
+
+## read xls files and clean data
+### read data into R
+Reading xls files into R is tricky as many xls tables have combined rows and 
+columns. 
+
+```{r}
+# package "readxl" crashes when there are missing value in xls cells. Fill the 
+# missing value with 0 or other appropriate values.
+library(readxl)
+education <- read_excel("education_sect4_1.xls", 
+                        col_types=rep("numeric", 25), skip = 4)
+
+# Obviously, this is not a clean R data frame.
+head(education)
+```
+
+
+### remove rows where the age is not a single number
+```{r}
+# all NAs in age from row 2 is what to remove. Note that he last one, which is
+# age above 85, is also removed. However, it will not affect the result much.
+education <- education[!is.na(education[,1]),]
+```
+
+### simplify columns
+no need for total, male and femal should be one column as sex
+```{r}
+education_male <- education[,c(1, 3, 6, 9, 12, 15, 18, 21, 24)]
+colnames(education_male) <- c("age", "population", "noSchool", "elementarySchool", 
+                              "middleSchool", "highSchool", "twoYearCollege", 
+                              "fourYearCollege", "graduate")
+education_male$sex <- "male"
+education_female <- education[,c(1, 4, 7, 10, 13, 16, 19, 22, 25)]
+colnames(education_female) <- c("age", "population", "noSchool", "elementarySchool", 
+                              "middleSchool", "highSchool", "twoYearCollege", 
+                              "fourYearCollege", "graduate")
+education_female$sex <- "female"
+education_new <- rbind(education_male, education_female)
+
+# college includes all years college
+education_new$college <- education_new$twoYearCollege + education_new$fourYearCollege
+education_new$birthYear <- 2010 - education_new$age
+
+# make a chinese version
+education_cn <- education_new
+education_cn$性别 <- education_cn$sex
+education_cn$性别[education_cn$性别 == "male"] <- "男"
+education_cn$性别[education_cn$性别 == "female"] <- "女"
+```
+
+## Story one: population
+```{r}
+g <- ggplot(education_new, aes(x=birthYear, y= population / 1e6))
+g + geom_line(aes(color=sex)) + geom_point(aes(color=sex)) + 
+    ggtitle("populations vs. birth year") +
+    xlab("Year of Birth") + 
+    ylab("Pupulation (million)")
+ggsave("graduate.jpg", width = 6, height = 4)
+
+
+g <- ggplot(education_cn, aes(x=birthYear, y= population / 1e6))
+g + geom_line(aes(color=性别)) + geom_point(aes(color=性别)) + 
+    ggtitle("各出生年份的现存人口") +
+    xlab("出生年份") + 
+    ylab("人口（百万）")
+```
+
+
+## explore the data
+```{r}
+library(ggplot2)
+# percentage of population without any school education
+g <- ggplot(education_new, aes(x=age, y=noSchool / population))
+g + geom_line(aes(color=sex)) + geom_point(aes(color=sex)) +
+    ggtitle("without any School Education") +
+    xlab("Age (years)") + 
+    ylab("Fraction of Pupulation")
+ggsave("noSchool.jpg", width = 6, height = 4)
+
+# highest with elementary education
+g <- ggplot(education_new, aes(x=age, y=elementarySchool / population))
+g + geom_line(aes(color=sex)) + geom_point(aes(color=sex)) + 
+    ggtitle("Elementary school as highest education") +
+    xlab("Age (years)") + 
+    ylab("Fraction of Pupulation")
+ggsave("elementary.jpg", width = 6, height = 4)
+
+
+# highest with middle school
+g <- ggplot(education_new, aes(x=age, y=middleSchool / population))
+g + geom_line(aes(color=sex)) + geom_point(aes(color=sex)) + 
+    ggtitle("Middle school as highest education") +
+    xlab("Age (years)") + 
+    ylab("Fraction of Pupulation")
+ggsave("middle.jpg", width = 6, height = 4)
+
+# high school
+g <- ggplot(education_new, aes(x=age, y=highSchool / population))
+g + geom_line(aes(color=sex)) + geom_point(aes(color=sex)) +
+    ggtitle("High school as highest education") +
+    xlab("Age (years)") + 
+    ylab("Fraction of Pupulation")
+ggsave("high.jpg", width = 6, height = 4)
+
+# two year college
+g <- ggplot(education_new, aes(x=age, y= twoYearCollege / population))
+g + geom_line(aes(color=sex)) + geom_point(aes(color=sex))
+
+# four year college
+g <- ggplot(education_new, aes(x=age, y= fourYearCollege / population))
+g + geom_line(aes(color=sex)) + geom_point(aes(color=sex))
+
+# college
+g <- ggplot(education_new, aes(x=age, y= college / population))
+g + geom_line(aes(color=sex)) + geom_point(aes(color=sex)) +
+    ggtitle("College as highest education") +
+    xlab("Age (years)") + 
+    ylab("Fraction of Pupulation")
+ggsave("college.jpg", width = 6, height = 4)
+
+# graduate
+g <- ggplot(education_new, aes(x=age, y= graduate / population))
+g + geom_line(aes(color=sex)) + geom_point(aes(color=sex)) + 
+    ggtitle("Graduate school as highest education") +
+    xlab("Age (years)") + 
+    ylab("Fraction of Pupulation")
+ggsave("graduate.jpg", width = 6, height = 4)
+```
+
+
+```{r}
+g <- ggplot(education_new, aes(x=age, y= population))
+g + geom_line(aes(color=sex)) + geom_point(aes(color=sex)) + 
+    ggtitle("populations at each age") +
+    xlab("Age (years)") + 
+    ylab("Pupulation")
+ggsave("graduate.jpg", width = 6, height = 4)
+```
+
+

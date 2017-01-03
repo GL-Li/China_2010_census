@@ -1,0 +1,64 @@
+---
+title: "Learn History from 2010 China Population"
+output: html_document
+---
+```{r, echo=FALSE}
+library(knitr)
+opts_chunk$set(message = FALSE, echo = FALSE, warning = FALSE)
+```
+
+The latest census in China was taken in 2010. The data are available online from
+[National Bureau of Statistics of the China](http://www.stats.gov.cn/tjsj/pcsj/rkpc/6rp/indexch.htm). Although this
+five-year-old census maybe too acient to be used for looking into the future of
+the fast changing China, it is actually a reliable source to look back into China's 
+history, especially when more detailed historical data are not accessible.  
+    
+In this post we will look at population data. The following
+figure plots the number of people against the year of birth. Note that the numbers 
+are of those who were still alive in 2010, not the total number of people born in 
+that year. Actually there is no way to know the number of birth prior to 1949, when 
+China was constantly at wars. 
+```{r}
+library(ggplot2)
+source("global_functions.R")
+
+# need to clean the excel file before reading
+# remove unused rows and columns
+# fill in missing cells, read_excel does not handel missing cells
+population <- read_cencus_age("population_total_sect3_1.xls",
+                              colNumber = 4, skip = 0)
+
+# read_excel() does not read "0" into to numeric, quite annoying
+population[3,1] <- 0
+
+# make data ready for plot
+population <- clean_cencus(population, 3, 4, c("age", "population"))
+population$birthYear <- 2010 - population$age
+
+# plot male and female side by side
+g <- ggplot(data = population, aes(x = birthYear, y = population / 1e6))
+g + geom_line(aes(color = sex)) + 
+    geom_point(aes(color = sex)) +
+    scale_x_continuous(breaks = seq(1900, 2020, by = 20) ) + 
+    ggtitle("2010 pupulation") +
+    xlab("Birth Year") +
+    ylab("Population (million)")
+```
+
+The most striking feature in this figure is that the population change over birth
+year is so violent. Normally, we would expect a smooth change over birth age, with 
+fewer at older ages and more at younger ages, as a result of natural death and natural poplation growth. 
+
+The violent changes in population indicates dramatical events. The first events 
+occured around 1960, where there is a sudden drop in population. This event is 
+officially called three-year natural disaster , or three-year difficult period, 
+by the government, or called three-year great famine by many. There are still fier??ce
+debate over how many people were starved to death as official numbers are not 
+available, this plot clearly shows that up to 40% fewer people survived to 2010 born 
+in those years. This could be due to much fewer baby were born or the infant fatality
+is way too high. The population recovered quickly in 1962, overshot in 1963, and back
+to normal trend until 1970.  
+  
+So what happend after 1970? 
+
+

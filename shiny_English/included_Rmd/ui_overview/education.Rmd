@@ -1,0 +1,7 @@
+---
+title: "education"
+author: "GL Li"
+date: "December 4, 2015"
+output: html_document
+---
+This section presents the number and percentage of population at each education level, as well as the evolution of the education in China. In particular, we will discuss the differences of education in city, town, and village.

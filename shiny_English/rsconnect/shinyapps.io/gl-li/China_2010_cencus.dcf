@@ -1,0 +1,10 @@
+name: China_2010_cencus
+title:
+account: gl-li
+server: shinyapps.io
+appId: 131845
+bundleId: 587020
+url: https://gl-li.shinyapps.io/China_2010_cencus/
+when: 1476489107.52623
+asMultiple: FALSE
+asStatic: FALSE

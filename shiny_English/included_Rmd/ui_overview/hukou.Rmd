@@ -1,0 +1,7 @@
+---
+title: "what is Hukou"
+author: "GL Li"
+date: "December 4, 2015"
+output: html_document
+---
+There is no way to understand the census data without knowing what is [Hukou](https://en.wikipedia.org/wiki/Hukou_system). Each Chinese is born with a registration record called Hukou, which attaches the person to a city, town, or village. City, town, and village are not only economical but also political division in China, with city at the top and village at the bottom.  There are some barriers to change one's Hukou from town to city and between different cities. It is extremely difficult to change one's Hukou from village to city. Many migrant workers from villages have been living and working in cities for many years without Hukou of that city. Consequently, they are denied access to the benefits that city offers to its citizens. For example, the children of migrant workers are not allowed to attend the free public schools in the city where their parents live unless paying a heavy fee that most migrant workers are unable to afford.

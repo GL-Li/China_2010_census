@@ -1,0 +1,26 @@
+﻿document.writeln("<!DOCTYPE html PUBLIC \"-\/\/W3C\/\/DTD XHTML 1.0 Transitional\/\/EN\" \"http:\/\/www.w3.org\/TR\/xhtml1\/DTD\/xhtml1-transitional.dtd\">");
+document.writeln("<html xmlns=\"http:\/\/www.w3.org\/1999\/xhtml\">");
+document.writeln("<head>");
+document.writeln("<meta http-equiv=\"Content-Type\" content=\"text\/html; charset=utf-8\" \/>");
+document.writeln("<title>新华网广告<\/title>");
+document.writeln("<style type=\"text\/css\">");
+document.writeln("<!--");
+document.writeln("body {");
+document.writeln("	margin-left: 0px;");
+document.writeln("	margin-top: 0px;");
+document.writeln("	margin-right: 0px;");
+document.writeln("	margin-bottom: 0px;");
+document.writeln("}");
+document.writeln("-->");
+document.writeln("<\/style><\/head>");
+document.writeln("");
+document.writeln("<body>");
+document.writeln("<table width=\"309\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">");
+document.writeln("  <tr>");
+document.writeln("    <td width=\"5\"><\/td>");
+document.writeln("    <td width=\"304\"><iframe src=\"http:\/\/www.xinhuanet.com\/xldb_iframe.htm\" frameborder=\"0\" width=\"304\" scrolling=\"No\" height=\"135\"><\/iframe><\/td>");
+document.writeln("  <\/tr>");
+document.writeln("<\/table>");
+document.writeln("<\/body>");
+document.writeln("<\/html>");
+document.writeln("")

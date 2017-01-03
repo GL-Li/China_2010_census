@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0048)http://news.cn/search/20100528_xilan_search.html -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=GBK">
+
+<title>无标题文档</title>
+<style type="text/css"> 
+ 
+<!--
+body {
+	background-color:#FFFFFF;
+	margin:0;
+	padding:0;
+}
+FORM { PADDING: 0px; MARGIN: 0px; }
+a:hover { color: #d90002; text-decoration: underline }
+ 
+.hui13 { font-family: "宋体"; font-size: 13px; line-height: 22px; font-weight: normal; color: #1E1E1E; text-decoration: none; text-align: left; }
+.hui13 a{ padding:0 2px;}
+.hui13 a:visited, .hui13 a:link { font-family: "宋体"; font-size: 13px; line-height: 22px; font-weight: normal; color: #1E1E1E; text-decoration: none}
+.hui13 a:hover { color: #d90002; text-decoration: underline; }
+ 
+.lan13 { font-family: "宋体"; font-size: 13px; line-height: 20px; font-weight: normal; color: #002864; text-decoration: none; text-align: right; }
+.lan13 a:visited, .lan13 a:link { font-family: "宋体"; font-size: 13px; line-height: 20px; font-weight: normal; color: #002864; text-decoration: none}
+.lan13 a:hover { color: #d90002; text-decoration: underline }
+.lan13 span{ font-size:12px; line-height: 20px; padding:0 2px;}
+ 
+.text1{
+	font-size:13px;
+	padding:3px 0 0 3px;
+	border-right-style: 点划;
+}
+.text1 a{
+	padding:0 3px;
+	text-decoration: underline;
+}
+.text1 a:visited, .text1 a:link { font-family: "宋体"; font-weight: normal; color: #002864; text-decoration: underline;}
+.text1 a:hover { color: #990000; text-decoration: none; font-weight:normal; }
+.bian{
+	border:1px solid #0033FF;
+	padding:1px 6px 1px 2px;
+}
+-->
+</style>
+</head>
+ 
+<body marginwidth="0" marginheight="0">
+<table width="300" border="0" cellspacing="0" cellpadding="0">
+  <tbody><tr>
+    <td width="270" bgcolor="#FFFFFF"><script type="text/javascript">
+	var actions = {
+			"xhw":"http://search.news.cn/inSearch.jspa",
+			"wy":"http://info.search.news.cn/result.jspa",
+			"tp":"http://search.news.cn/pic/image.jspa",
+			"shp":"http://search.news.cn/video/videoSearch.jspa",
+			"shq":"http://search.home.news.cn/forumbookSearch.do"
+	}
+		String.prototype.trim = function(){
+		var reExtraSpace = /^\s*(.*?)\s+$/;
+		return this.replace(reExtraSpace,"$1");
+	}
+	function trimInput(){
+		var arg =document.getElementById("inputwd").value;
+		if(arg.trim() == "" || arg.trim()=="请输入关键字"){
+			actions.wy="http://info.search.news.cn";
+			actions.shp="http://search.news.cn/video/video.jsp";
+			return true;
+		}else{
+			return true;
+		}
+	}
+	function submitcheck1()
+	{
+		var arg =document.getElementById("inputwd").value;
+		var selection = document.getElementById("channel").value;
+		if(arg.trim() == "" || arg.trim()=="请输入关键字"){
+			switch(selection){
+				case "xhw": window.open("http://info.search.news.cn");break; 
+				case "wy": window.open("http://search.news.cn");break; 
+				case "tp": window.open("http://search.news.cn/pic/index.jsp");break; 
+				case "shp": window.open("http://search.news.cn/video/video.jsp");break; 
+				case "shq": window.open("http://search.home.news.cn");break; 
+				default: break; 
+			}
+		}else{
+			if(selection=="xhw"){
+				//新华网站内搜索
+				document.getElementById('xhwarg').value=arg;
+				var form = document.getElementById('xhw');
+				form.action = actions[selection];
+				form.submit();
+			}
+			else if(selection=="wy"||selection=="tp"){
+				//网页和图片搜索
+				document.getElementById('wytparg').value=arg;
+				var form = document.getElementById('wytp');
+				form.action = actions[selection];
+				form.submit();
+			}
+			else if(selection=="shp"){
+				//视频搜索
+				document.getElementById('shparg').value=arg;
+				var form = document.getElementById('shp');
+				form.action = actions[selection];
+				form.submit();
+			}
+			else if(selection=="shq"){
+				//社区搜索
+				top.location.href=actions[selection]+"?sw="+encodeURIComponent(arg)
+			}
+		}
+	}
+  </script>
+                  <form id="wytp" action="http://news.cn/search/20100528_xilan_search.html#" target="_blank">
+                    <input type="hidden" name="pno" value="1">
+                    <input type="hidden" name="t" value="1">
+                    <input type="hidden" name="t1" value="0">
+                    <input type="hidden" name="np" value="1">
+                    <input type="hidden" name="rp" value="20">
+                    <input type="hidden" name="ss" value="2">
+                    <input type="hidden" id="wytparg" name="n1" value="">
+                  </form>
+                <form id="xhw" action="http://news.cn/search/20100528_xilan_search.html#" target="_blank">
+                    <input type="hidden" id="xhwarg" name="n" value="">
+                </form>
+                <form id="shp" action="http://news.cn/search/20100528_xilan_search.html#" target="_blank">
+                    <input type="hidden" id="shparg" name="video" value="">
+                </form>
+                <div>
+<form id="pd" action="http://search.news.cn/inSearch.jspa" name="form" target="_blank" onkeydown="if(event.keyCode==13){submitcheck1();return false;}">
+                    <table cellspacing="0" cellpadding="0" width="10" align="left"><tbody><tr><td width="10"></td></tr></tbody></table>
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tbody><tr>
+                        
+                        <td>
+                            <input id="inputwd" type="text" name="n" size="15" value="" onmouseover="this.focus()" onfocus="this.select()" onclick="if(this.value==&#39;请输入关键字&#39;)this.value=&#39;&#39;">
+                            <select id="channel" style="display : none">
+                              <option value="wy">网页</option>
+                              <option value="xhw">新闻</option>
+                              <option value="tp">图片</option>
+                              <option value="shp">视频</option>
+                              <option value="shq">社区</option>
+                            </select></td>
+                        <td><div align="left"><span class="text1"><a href="http://info.search.news.cn/" target="blank"><b>新闻</b></a><a href="http://search.news.cn/" target="blank">网页</a></span></div></td>
+                            <td><input type="button" class="button" value="搜索" onclick="submitcheck1()">
+                        </td>
+                      </tr>
+                    </tbody></table></form>
+    </div></td>
+    <td width="1" bgcolor="DFECFF"></td>
+  </tr>
+</tbody></table>
+
+</body></html>

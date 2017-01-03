@@ -1,0 +1,9 @@
+---
+title: "introduction"
+output: html_document
+---
+This application visualizes the China 2010 census. China has been conducting a national census covering all population every ten years since 1990, collecting data such as age, gender, education and housing. The most recent one was carried out in November 01, 2010. The official summary of the census is published on the webpage of [National Bureau of Statistics of China](http://www.stats.gov.cn/tjsj/pcsj/rkpc/6rp/indexch.htm) as Excel sheets. Visualization helps readers better understand information buried in these sheets.  
+
+This app attempts to convey the information essential to understanding China. The census provides the most reliable data about the populations, which contains information of significant historical events over the past 100 years.  The census data also tells stories about how the social status of female changes over time. In addition, this data clearly shows the government-made social gap between urban and rural areas. This gap has impacted and will continue to impact the life of billions.  
+
+This app is organized into **population**, **education**, and **house** for now. More topics will be added later. This page provides an brief overview of each. For detailed interactive visualization, please click on the menu items to the left.
