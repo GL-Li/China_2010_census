@@ -1,4 +1,4 @@
-setwd("~/Dropbox/my_R_projects/China_2010_cencus/prepare_data/")
+setwd("~/Dropbox/my_R_projects/China_2010_census/prepare_data/")
 
 library(readxl); library(ggplot2); library(tidyr)
 

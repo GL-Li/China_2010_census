@@ -1,6 +1,6 @@
 library(ggplot2)
 
-setwd("~/Dropbox/my_R_projects/China_2010_cencus/prepare_data/")
+setwd("~/Dropbox/my_R_projects/China_2010_census/prepare_data/")
 rm(list = ls())
 source("global_functions.R")
 

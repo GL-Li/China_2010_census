@@ -3,7 +3,7 @@
 # data source: The 2010 population cencus of China
 #   http://www.stats.gov.cn/tjsj/pcsj/rkpc/6rp/indexce.htm
 
-setwd("~/Dropbox/my_R_projects/China_2010_cencus/prepare_data/")
+setwd("~/Dropbox/my_R_projects/China_2010_census/prepare_data/")
 # clearn environment
 rm(list = ls())
 
